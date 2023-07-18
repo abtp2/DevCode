@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+				<meta charset="UTF-8">
+				<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/>
+				<link rel="stylesheet" href="icons/boxicons.css">
+				<link rel="stylesheet" href="css/index.css">
+				<script src="ace/jquery.min.js"></script>
+				<script src="js/skulpt.min.js"></script>
+				<script src="js/skulpt-stdlib.js"></script>
+				<script src="js/jquery.min.js"></script>
+				<title>DevCode</title>
+</head>
+<body>
+<!-- navbar -->
+<div id="nav">
+  <div>
+  <i class="bx bxl-deviantart"></i>
+  <h1>Dev<span>Code</span></h1>
+  </div>
+</div>
+<!-- <div id="buzz"></div> -->
+
+
+<!-- sidemenu -->
+<div id="menu">
+  <h1 onclick="newFile()"><i class="bx bxs-file-plus"></i><span>New File</span></h1>
+  <h1><i class="bx bxs-file-blank"></i><span>Open File</span></h1>
+  <h1><i class="bx bxs-save"></i><span>Save</span></h1>
+  <h1><i class="bx bxs-save"></i><span>Save As</span></h1>
+  <h1 onclick="run()"><i class="bx bx-play-circle"></i><span>Run Code</span></h1>		
+</div>
+
+
+
+<!-- tabs -->
+<div id="tabs">
+	<div class="main-tab"><img src="pyicon.png"><p>index.py</p><i onclick="null" class="bx bx-x" area="textarea" id="index-i"></i></div>
+</div>
+
+
+<!-- textarea -->
+<div id="code-cover">
+<div id="textarea" class="textarea main-code"></div>
+</div>
+
+
+<!-- code run div -->
+<div id="result-div">
+  <div id="result-nav">
+  <i class="bx bx-left-arrow-alt" onclick="closeRun()"></i>
+  <div>
+  <p id="code_run_title">index.py</p>
+  <p id="result-link">/tonyedit/emulated/0/text</p>
+  </div>
+  </div>
+  
+  
+  <div id="result-error">
+  <p id="error-alert"></p>
+  <p><span id="error-close">OK</span></p>				
+  </div>
+  		
+  <div id="result-code-div"></div>
+  <textarea id="result-code"></textarea>		
+  <canvas id="mycanvas"></canvas>
+</div>
+
+
+
+<!-- virtual alert -->
+<div id="v_alert">
+<p id="v_alert_text"></p>
+</div>
+<script src="js/ace.js"></script>
+<script src="ace/theme-github_dark.js"></script>
+<script src="ace/theme-twilight.js"></script>
+<script src="ace/theme-one_dark.js"></script>
+<script src="ace/theme-dracula.js"></script>
+<script src="ace/theme-tomorrow_night.js"></script>
+<script src="ace/theme-clouds_midnight.js"></script>
+<script src="js/ext-language_tools.min.js"></script>
+<script src="ace/ext-beautify.js"></script>
+<script src="ace/mode-python.js"></script>
+<script src="js/iro@5.js"></script>
+<script src="js/index.js"></script>
+<script src="js/editor.js"></script>
+</body>
+</html>
