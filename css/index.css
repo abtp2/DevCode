@@ -5,8 +5,17 @@ box-sizing: border-box;
 font-family: arial;
 }
 body{
+min-height: 100vh; 
+min-height: -webkit-fill-available;
 /*  background: #1a2730; */
 background: #20303d;
+overflow: hidden;
+}
+html{
+height: -webkit-fill-available; 
+}
+#result-div *{
+overflow: auto !important;	
 }
 
 
@@ -44,7 +53,7 @@ height: 2px;
 /* side menu */
 #menu{
 width: fit-content;
-height: 100vh;
+height: 100%;
 background: #20303d;
 color: #fff;
 margin: 0;
@@ -142,12 +151,15 @@ position: absolute;
 top: 108px;
 left: 48px;
 width: calc(100% - 48px);
-height: 100vh;	
+height: calc(100% - 142px); 
+margin-bottom: 70px;
+border-radius: 0 0 10px 10px;
+overflow: hidden;
 }
 .textarea{
 width: 100%;
 height: 100%;
-line-height: 22px;
+line-height: 24px;
 position: absolute;
 z-index: 9;
 }
@@ -163,7 +175,6 @@ border-bottom: 1.5px solid #dcdcdc;
 position: absolute;
 left: 203px;
 width: calc(100% - 230px);
-height: 100vh;	
 }}
 
 
@@ -193,6 +204,7 @@ z-index: 999;
 top: 0;
 background: #fff;
 display: none; 
+overflow: auto !important;
 }
 #result-nav{
 width: 100%;
@@ -237,10 +249,10 @@ opacity: 0.4;
 width: 100%;
 outline: none;
 border: none;
-height: calc(100vh - 60px);
+height: calc(100% - 60px);
 color: #57b9e0;
 background: #10171d;
-padding: 5px 8px;
+padding: 5px 12px !important;
 user-select: none !important;
 pointer-events: none;
 word-break: break-all;
@@ -248,15 +260,17 @@ overflow: scroll;
 font-size: 16.5px;
 font-weight: 401;
 display: block;
+overflow: auto !important;
 }
+
 #result-code-div{
 width: 100%;
 outline: none;
 border: none;
-height: calc(100vh - 60px);
+height: calc(100% - 60px);
 padding: 5px 8px;
 word-break: break-all;
-overflow: scroll !important;
+overflow: auto !important;
 font-size: 16px;
 font-weight: 400;
 display: none;
@@ -266,7 +280,7 @@ width: 100%;
 height: auto;
 outline: none;
 border: none;
-overflow: scroll !important;
+overflow: auto !important;
 user-select: none;
 word-break: break-all;
 display: none;
