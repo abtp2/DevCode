@@ -202,7 +202,7 @@ text4.setValue(`\n\n\n\n\n`,1);
 text4.moveCursorToPosition({row: 0, column: 0});
 text4.setTheme("ace/theme/github_dark");
 init();
-window.text4 = tzer4;
+window.text4 = text4;
 areaClick("textarea4");
 }//if
 

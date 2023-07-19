@@ -23,11 +23,9 @@ var wiiw = window.innerWidth;
 var wiih = window.innerHeight - 60;
 
 
-function outf(text) { 
+function outf(text) {
   var mypre = document.getElementById("result-code");
-  var existingContent = mypre.innerHTML;
-  var newContent = existingContent + ">>> " + text;
-  mypre.innerHTML = newContent + "\n";
+  mypre.innerHTML = mypre.innerHTML + text;
 }
 
  
