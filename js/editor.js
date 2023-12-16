@@ -1,6 +1,7 @@
 // output functions are configurable.  This one just appends some text
 // to a pre element.
-var codeText;
+var codeText = acehtml;
+
 function checkCodeDiv(){
 const divs = document.querySelectorAll('.textarea');
 const desiredZIndexValue = '99'; // Modify here with the desired z-index value
@@ -154,8 +155,55 @@ function run(){
 checkCodeDiv(); 
 checklib();
 runit();
+//save();
+
+var a = document.getElementsByClassName("main-tab")[0].querySelector("p").innerHTML;
+document.getElementById("code_run_title").innerHTML = a;
 document.getElementById("result-div").style.display ="block"; 
 }
 function closeRun(){
 document.getElementById("result-div").style.display ="none"; 
 }
+
+
+
+
+
+
+//Download function
+function download(){
+checkCodeDiv();
+var fileNameInput = prompt("Enter File name :");
+var x = codeText.getSession().getValue();
+
+if(fileNameInput == null){
+return;	
+}
+else{
+const blob = new Blob([x], {type:"text/plain"});
+const fileUrl = URL.createObjectURL(blob);
+const link = document.createElement("a");
+link.download = fileNameInput + ".py";
+link.href = fileUrl;
+link.click();				
+}
+}
+
+
+
+
+
+/*
+//to save code
+function save(){
+var x = codeText.getSession().getValue();
+localStorage.setItem("local", x);
+}
+
+function setSave(){
+var y = localStorage.getItem("local");
+if(y !== null){
+codeText.setValue(y);
+}
+}
+*/
