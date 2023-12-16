@@ -3,6 +3,7 @@ margin: 0;
 padding: 0;
 box-sizing: border-box;
 font-family: arial;
+user-select: none;
 }
 body{
 min-height: 100vh; 
@@ -16,6 +17,20 @@ height: -webkit-fill-available;
 }
 #result-div *{
 overflow: auto !important;	
+}
+.setting-blur > *:not(#setting){ 
+opacity: 0.9;
+filter: brightness(50%) blur(2px);
+pointer-events: none;
+}
+
+
+*::-webkit-scrollbar{
+width: 0px !important;
+}
+*::-webkit-scrollbar-track {
+background: transparent !important;
+width: 0px !important;
 }
 
 
@@ -68,7 +83,7 @@ display: flex;
 white-space: nowrap;
 align-items: center !important;
 }
-#menu h1:hover{
+#menu h1:active{
 background: #4e96bc;
 }
 #menu h1 i{			
@@ -128,6 +143,9 @@ font-weight: 401;
 color: #fff;
 margin-left: 13px;
 opacity: 0.8;
+white-space: nowrap;
+overflow: hidden !important;
+text-overflow: ellipsis;
 }
 #tabs div i{
 font-size: 22px;
@@ -351,3 +369,73 @@ color: #fff;
 font-size: 14.2px;
 font-weight: 400.5;
 }
+
+
+
+
+
+
+/* setting */
+#setting{
+width: 90%;
+max-width: 400px;
+background: #20303d;
+position: absolute;
+transform: translateX(-50%);
+top: 2rem;
+left:50%;
+border-radius: 5px;
+z-index: 9999;
+padding: 5px 10px 10rem 10px;
+box-shadow: 0 0 3px 1px #000;
+display: none;
+}
+#setting i{
+font-size: 30px;
+color: #fff;
+position: absolute;
+right: 15px;
+top: 15px;
+border-radius: 100%;
+padding: 3px;
+}
+#setting i:active{
+background: rgba(255,255,255,0.1);
+}
+#setting h1{
+font-size: 24px;
+color: #fff;
+margin: 10px 10px 18px 10px;
+}
+#setting div{
+display: flex;
+align-items: center;
+margin: 10px 10px;
+}
+#setting div p{
+font-size: 15px;
+font-weight: 401;
+margin-right: 1rem;
+color: #fff;
+opacity: 0.8;
+}
+#setting div select{
+padding: 2px 4px;
+border-radius: 4px;		
+border: 2px solid #000;
+font-size: 13px;
+color: #fff;
+outline: none;
+background: rgba(0,0,0,0.1);
+}
+#shortcut{
+display: flex;
+flex-direction: column;
+align-items: flex-start !important;
+margin: 1rem 10px 10px 10px !important;
+}
+#shortcut p{
+margin: 5.5px 0 !important;
+}
+
+
