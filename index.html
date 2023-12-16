@@ -4,6 +4,7 @@
 				<meta charset="UTF-8">
 				<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
 				<link rel="stylesheet" href="icons/boxicons.css">
+				<link rel="manifest" href="js/manifest.json">
 				<link rel="stylesheet" href="css/index.css">
 				<script src="ace/jquery.min.js"></script>
 				<script src="js/skulpt.min.js"></script>
@@ -14,7 +15,7 @@
 <body>
 <!-- navbar -->
 <div id="nav">
-  <div>
+  <div ondblclick="screenFull()">
   <i class="bx bxl-deviantart"></i>
   <h1>Dev<span>Code</span></h1>
   </div>
@@ -22,12 +23,14 @@
 <!-- <div id="buzz"></div> -->
 
 
+<a href="" id="download" hidden></a>
+
 <!-- sidemenu -->
 <div id="menu">
-  <h1 onclick="newFile()"><i class="bx bxs-file-plus"></i><span>New File</span></h1>
-  <h1><i class="bx bxs-file-blank"></i><span>Open File</span></h1>
-  <h1><i class="bx bxs-save"></i><span>Save</span></h1>
-  <h1><i class="bx bxs-save"></i><span>Save As</span></h1>
+  <h1 onclick="newFile('\n','new')"><i class="bx bxs-file-plus"></i><span>New File</span></h1>
+  <h1 onclick="openFileSelector()"><i class="bx bxs-file-blank"></i><span>Open File</span></h1>
+  <h1 onclick="download()"><i class="bx bxs-download"></i><span>Download</span></h1>
+  <h1 onclick="openSetting()"><i class="bx bxs-cog"></i><span>Settings</span></h1>
   <h1 onclick="run()"><i class="bx bx-play-circle"></i><span>Run Code</span></h1>		
 </div>
 
@@ -68,10 +71,39 @@
 
 
 
+
+
+<!-- setting -->
+<div id="setting">
+<i class="bx bx-x" onclick="closeSetting()"></i>
+<h1>Settings</h1> 
+ <div><p>Fullscreen mode</p> <select onchange="setScreen(this)">
+ <option>On</option>
+ <option selected>Off</option>
+ </select></div>
+ 
+ <div><p>Editor theme</p> <select onchange="setTheme(this)">
+ <option>github_dark</option>
+ <option>twilight</option>
+ <option>one_dark</option>
+ <option>dracula</option>
+ <option>tomorrow_night</option>
+ <option>clouds_midnight</option>
+ </select></div>			
+
+ <div id="shortcut">
+ <p><b>Shortcuts :</b></p>
+ <p>To Fullscreen : "Alt + F11"</p>
+ <p>To Run Code : "Alt + F5"</p>
+ </div>
+</div>
+
+
 <!-- virtual alert -->
 <div id="v_alert">
 <p id="v_alert_text"></p>
 </div>
+
 <script src="js/ace.js"></script>
 <script src="ace/theme-github_dark.js"></script>
 <script src="ace/theme-twilight.js"></script>
@@ -84,6 +116,5 @@
 <script src="ace/mode-python.js"></script>
 <script src="js/iro@5.js"></script>
 <script src="js/index.js"></script>
-<script src="js/editor.js"></script>
 </body>
 </html>
