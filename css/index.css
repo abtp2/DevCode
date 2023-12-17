@@ -23,6 +23,11 @@ opacity: 0.9;
 filter: brightness(50%) blur(2px);
 pointer-events: none;
 }
+.blackbox-blur > *:not(#blackbox){ 
+opacity: 0.9;
+filter: brightness(50%) blur(2px);
+pointer-events: none;
+}
 
 
 *::-webkit-scrollbar{
@@ -439,3 +444,47 @@ margin: 5.5px 0 !important;
 }
 
 
+
+/* blackbox */
+#blackbox{
+width: 90%;
+height: 500px;
+max-width: 500px;
+background: #000;
+position: absolute;
+transform: translateX(-50%);
+top: -2.5rem;
+left:50%;
+border-radius: 5px;
+z-index: 9999;
+box-shadow: inset 5px 0px 0px 0px rgba(0,0,0,0.75);
+filter: invert(100%);
+display: none;
+}
+#blackbox iframe{
+width: 100%;
+height: 100%;
+}
+#blackbox div{
+width: 100%;
+height: 100px;
+background: #f9f9f9;
+position: absolute;
+top: 0;
+display: flex;
+align-items: flex-end;
+justify-content: space-between;
+padding: 10px 20px;
+}
+#blackbox div h1{
+font-size: 24px;
+}
+#blackbox div i{
+font-size: 30px;
+color: #000;
+border-radius: 100%;
+padding: 3px;
+}
+#blackbox div i:active{
+background: rgba(0,0,0,0.1);
+}
