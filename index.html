@@ -3,6 +3,7 @@
 <head>
 				<meta charset="UTF-8">
 				<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+				<link rel="icon" type="image/png" href="logo.png">
 				<link rel="stylesheet" href="icons/boxicons.css">
 				<link rel="manifest" href="js/manifest.json">
 				<link rel="stylesheet" href="css/index.css">
@@ -30,8 +31,9 @@
   <h1 onclick="newFile('\n','new')"><i class="bx bxs-file-plus"></i><span>New File</span></h1>
   <h1 onclick="openFileSelector()"><i class="bx bxs-file-blank"></i><span>Open File</span></h1>
   <h1 onclick="download()"><i class="bx bxs-download"></i><span>Download</span></h1>
+  <h1 onclick="openAI()"><i class="bx bxs-bot"></i><span>DevCode AI</span></h1>
   <h1 onclick="openSetting()"><i class="bx bxs-cog"></i><span>Settings</span></h1>
-  <h1 onclick="run()"><i class="bx bx-play-circle"></i><span>Run Code</span></h1>		
+  <h1 onclick="run()"><i class="bx bx-play-circle"></i><span>Run Code</span></h1>
 </div>
 
 
@@ -97,6 +99,17 @@
  <p>To Run Code : "Alt + F5"</p>
  </div>
 </div>
+
+
+<!-- blackbox -->
+<div id="blackbox">
+ <div>
+  <h1>DevCode AI</h1>
+  <i class="bx bx-x" onclick="closeAI()"></i>
+ </div>
+<iframe src="https://www.blackbox.ai/"></iframe>			
+</div>
+
 
 
 <!-- virtual alert -->
