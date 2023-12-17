@@ -173,7 +173,8 @@ document.getElementById("result-div").style.display ="none";
 //Download function
 function download(){
 checkCodeDiv();
-var fileNameInput = prompt("Enter File name :");
+var a = document.getElementsByClassName("main-tab")[0].querySelector("p").innerHTML;
+var fileNameInput = prompt("Enter File name :", a);
 var x = codeText.getSession().getValue();
 
 if(fileNameInput == null){
@@ -183,7 +184,7 @@ else{
 const blob = new Blob([x], {type:"text/plain"});
 const fileUrl = URL.createObjectURL(blob);
 const link = document.createElement("a");
-link.download = fileNameInput + ".py";
+link.download = fileNameInput;
 link.href = fileUrl;
 link.click();				
 }

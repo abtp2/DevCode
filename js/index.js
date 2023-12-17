@@ -390,3 +390,18 @@ document.documentElement.requestFullscreen();
 else{
 alert("Your device don't support Fullscreen")
 }}
+
+
+
+
+//blackbox 
+function openAI(){
+var x = document.getElementById("blackbox");
+x.style.display ="block";
+document.body.classList.add("blackbox-blur");
+}
+function closeAI(){
+var x = document.getElementById("blackbox");
+x.style.display ="none";
+document.body.classList.remove("blackbox-blur");
+}
